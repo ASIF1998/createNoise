@@ -13,9 +13,6 @@ GLubyte* noise::create2DMapNoise(float baseFreq, float persistence, float surfac
             float freq = baseFreq;
             float amplitude = persistence;
             
-            // 0 <= shift << 262142.0f
-//            glm::vec2 shift (262142.0f);
-            
             for(int oct = 0; oct < octave; oct++ ) {
                 glm::vec2 p (x * freq, y * freq);
                 p += shift;
