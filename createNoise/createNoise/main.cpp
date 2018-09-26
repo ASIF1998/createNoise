@@ -17,9 +17,9 @@ GLuint vertHandle, fragHandle, programHandle;
 void scene (SDL_Window* window) {
     glUseProgram (programHandle);
     
-    GLubyte* data = noise::create2DMapNoise(2.0, .3, .6, 200, 300);
+    GLubyte* data = noise::create2DMapNoise(2.0, 0.6, 0.2, 1, glm::vec2(4123.3413f, 3421.544f),128, 128);
     
-    texture noiseTexture (data, 200, 300);
+    texture noiseTexture (data, 128, 128);
     noiseTexture.bind();
     
     delete [] data;
@@ -143,8 +143,8 @@ void createShader () throw (std::runtime_error) {
     if (!vertHandle || !fragHandle)
         throw std::runtime_error ("Error create shader");
     
-    std::string vertCodeString (readFile("/Users/asifmamedov/Desktop/useTextureOpenGL/i/i/basic.vert"));
-    std::string fragCodeString (readFile("/Users/asifmamedov/Desktop/useTextureOpenGL/i/i/basic.frag"));
+    std::string vertCodeString (readFile("/Users/asifmamedov/Desktop/shaders/noise/createNoise/createNoise/basic.vert"));
+    std::string fragCodeString (readFile("/Users/asifmamedov/Desktop/shaders/noise/createNoise/createNoise/basic.frag"));
     
     const char* vertCode = vertCodeString.c_str();
     const char* fragCode = fragCodeString.c_str();
