@@ -6,6 +6,8 @@
 
 class noise {
 public:
+    // Функция, предназначенная для создания шума.
+    // 0 <= shift << 262142.0f
     static GLubyte* create2DMapNoise (float baseFreq = 4.0f, float persistance = 0.5f, float surfaceDepth = 1.0f, int octave = 4, glm::vec2 shift = glm::vec2(0.0f, 0.0f), int w = 128, int h = 128);
 };
 
